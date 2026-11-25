@@ -300,7 +300,11 @@ def prompt_version(stand) -> tuple[str, str]:
     мітка — саме те поле, що бреше. Дефект D26 живе в інструменті, а не в
     промпті, тому з DEFECTS=D26 overlays порожній і версія лишається base.v1."""
     p = stand._call("GET", "/api/_test/prompt")
-    return p["version"], p["version"]       # КРОК 4: перша половина — неправда
+    first_line = (p.get("text") or "").splitlines()
+    match = re.search(r"\((base\.v\d+(?:[-.][\w-]+)?)\)", first_line[0]) if first_line else None
+    version = match.group(1) if match else "unknown"
+    overlays = p.get("overlays") or []
+    return "+".join([version, *overlays]), p["version"]
 
 
 
