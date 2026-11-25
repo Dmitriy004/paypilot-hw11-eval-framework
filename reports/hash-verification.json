@@ -1,0 +1,14 @@
+{
+  "scope": "temporary copy; tracked sets untouched",
+  "before": "2eeadf91c793",
+  "after_append": "6c231acccd81",
+  "after_crlf": "6c231acccd81",
+  "after_remove": "2eeadf91c793",
+  "step2_tests": {
+    "passed": 6,
+    "total": 6
+  },
+  "l03_daily_cases": 37,
+  "l11_manual_cases": 6,
+  "l11_generated_cases": 15
+}

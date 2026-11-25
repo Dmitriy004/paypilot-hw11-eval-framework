@@ -29,3 +29,9 @@
 | reporting | compare | два JSON | відмінності/exit code | виклики стенду |
 
 Стан виконання й результати доповнюю після кожного кроку. Незаповнені розділи не є доказом готовності.
+
+## 2. Dataset manager і set_hash
+
+Хешую канонічний JSON сирих вибраних кейсів, sort_keys=True, ensure_ascii=False, separators=(',',':'), ID у відсортованому порядку, рядки через LF; SHA256, перші 12 символів. load_cases фільтрує gate/CASE перед хешуванням. Шість тестів step2: 6/6 PASS.
+
+[Перевірка на тимчасовій копії](reports/hash-verification.json): append змінює хеш; CRLF не змінює; видалення повертає початковий. Tracked sets не змінено. Dry-run l03: 37 кейсів, 37 запланованих викликів агента, 0 судді; unit manual 6, generated 15 — окремо.
