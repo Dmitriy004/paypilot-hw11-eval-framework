@@ -12,9 +12,9 @@
 | loader.load, validate.py | L03 | dataset manager | JSONL | валідовані кейси | старий loader.set_hash хешує байти |
 | cli.py, runner.main | L03–L09 | eval runner + storage + reporting | набір/профіль | результати, JSON, консоль | старий змішаний вхід |
 | assertions.py | L03–L09 | assertion engine | відповідь/трeйс/очікуване | Verdict | викликає ранер |
-| runner._write_report | L03–L09 | result storage | результати | reports | старе збереження в runner.main |
+| runner.main (запис JSON) | L03–L09 | result storage | результати | reports | старе збереження в runner.main |
 | console.py | L03–L09 | reporting | результати | консоль | не запускає модель |
-| tools/calibrate_judge.py, tools/compare_judges.py | L09–L10 | окремий вхід | розмітка/моделі | калібрування | не daily |
+| tools/calibrate_run.py, tools/compare_judges.py | L09–L10 | окремий вхід | розмітка/моделі | калібрування | не daily |
 | run_dialog.py (ДЗ07) | L08 | окремий вхід | сценарій | діалог/трейси | у кіті L12 відсутній |
 | pytest tests/manual, tests/generated (ДЗ10 resit) | L11 | окремий вхід | функції/движок | pytest exit code | manual власний; generated запасний |
 | tools/run_mutants.py (ДЗ10 resit) | L11 | окремий вхід | мутації/тести | виявлені зміни | не включаю в daily |
@@ -35,3 +35,15 @@
 Хешую канонічний JSON сирих вибраних кейсів, sort_keys=True, ensure_ascii=False, separators=(',',':'), ID у відсортованому порядку, рядки через LF; SHA256, перші 12 символів. load_cases фільтрує gate/CASE перед хешуванням. Шість тестів step2: 6/6 PASS.
 
 [Перевірка на тимчасовій копії](reports/hash-verification.json): append змінює хеш; CRLF не змінює; видалення повертає початковий. Tracked sets не змінено. Dry-run l03: 37 кейсів, 37 запланованих викликів агента, 0 судді; unit manual 6, generated 15 — окремо.
+
+## 3. Ранер і assertion engine
+
+collect_oracles збирає engine:disputes з case metadata, перший check_dispute_eligibility з трейсу, відфільтрованого клієнта зі state(customers), спори потрібної транзакції зі state(disputes). assert_case лише читає готовий словник, без HTTP. Step3: 1/1 PASS.
+
+| Шар | Кейси | Заплановано агент | Заплановано суддя |
+|---|---:|---:|---:|
+| daily | 71 | 72 | 0 |
+| all | 90 | 264 | 40 |
+| unit L11 | manual 6, generated 15 | — | — |
+
+Dry-run не викликав моделі. Щоденний хеш 58cf5b498718, all ebf346775d7b. Контроль SET=l12 до реалізації кроку5: SKIP, чотири ключі зібрано, exit1, один виклик агента; SKIP-запис видалено за інструкцією, у здачу його не включаю. Його 0.0000 у machine.cost_usd не вважаю доказом безкоштовності — перевіряю облік вартості окремо.
