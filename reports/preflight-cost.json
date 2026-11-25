@@ -1,0 +1,45 @@
+{
+  "scope": "step3 preliminary SKIP probe; not a comparison run",
+  "request_id": "d1e5ffc162934b41",
+  "agent_calls": 1,
+  "model": "gpt-5-mini-2025-08-07",
+  "cost_basis": "token_tariff_estimate",
+  "provider_reconciled": false,
+  "cost_usd": 0.0079825,
+  "llm_calls": [
+    {
+      "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+      "gen_ai.usage.input_tokens": 1302,
+      "gen_ai.usage.output_tokens": 211,
+      "gen_ai.usage.cache_read_input_tokens": 0,
+      "gen_ai.usage.cache_creation_input_tokens": 0,
+      "gen_ai.usage.reasoning_tokens": 192
+    },
+    {
+      "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+      "gen_ai.usage.input_tokens": 1408,
+      "gen_ai.usage.output_tokens": 166,
+      "gen_ai.usage.cache_read_input_tokens": 1152,
+      "gen_ai.usage.cache_creation_input_tokens": 0,
+      "gen_ai.usage.reasoning_tokens": 128
+    },
+    {
+      "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+      "gen_ai.usage.input_tokens": 1551,
+      "gen_ai.usage.output_tokens": 1278,
+      "gen_ai.usage.cache_read_input_tokens": 1280,
+      "gen_ai.usage.cache_creation_input_tokens": 0,
+      "gen_ai.usage.reasoning_tokens": 1216
+    },
+    {
+      "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+      "gen_ai.usage.input_tokens": 1637,
+      "gen_ai.usage.output_tokens": 2031,
+      "gen_ai.usage.cache_read_input_tokens": 1408,
+      "gen_ai.usage.cache_creation_input_tokens": 0,
+      "gen_ai.usage.reasoning_tokens": 1856
+    }
+  ],
+  "pricing_source": "https://developers.openai.com/api/docs/pricing",
+  "checked_date": "2026-11-26"
+}

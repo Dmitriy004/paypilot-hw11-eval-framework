@@ -117,7 +117,29 @@ def calls_planned(case: dict) -> tuple[int, int]:
 
 # ─────────────────────────── 2. eval runner ───────────────────────────────
 
-SPENT = {"agent_calls": 0, "cost_usd": 0.0}
+SPENT = {"agent_calls": 0, "cost_usd": 0.0, "requests": []}
+
+# Standard text-token tariffs, USD per million, checked 2026-11-26:
+# https://developers.openai.com/api/docs/pricing
+# (uncached input, cache-read input, output); estimates, not billing reconciliation.
+TOKEN_PRICES = {"gpt-4.1-mini": (0.40, 0.10, 1.60),
+                "gpt-5-mini": (0.25, 0.025, 2.00)}
+
+
+def estimate_cost(calls: list[dict]) -> float | None:
+    if not calls:
+        return None
+    total = 0.0
+    for call in calls:
+        model = re.sub(r"-\d{4}-\d{2}-\d{2}$", "", call.get("gen_ai.request.model", ""))
+        rates = TOKEN_PRICES.get(model)
+        inp = call.get("gen_ai.usage.input_tokens")
+        out = call.get("gen_ai.usage.output_tokens")
+        cached = call.get("gen_ai.usage.cache_read_input_tokens", 0)
+        if rates is None or inp is None or out is None or not 0 <= cached <= inp:
+            return None
+        total += ((inp - cached) * rates[0] + cached * rates[1] + out * rates[2]) / 1_000_000
+    return round(total, 9)
 
 
 def _meter(stand):
@@ -127,7 +149,18 @@ def _meter(stand):
     def metered(*args, **kwargs):
         out = chat(*args, **kwargs)
         SPENT["agent_calls"] += 1
-        SPENT["cost_usd"] += float((out.get("usage") or {}).get("cost_usd") or 0)
+        usage = out.get("usage") or {}
+        calls = stand.llm_calls(stand.trace(out["request_id"]))
+        reported = usage.get("cost_usd")
+        cost = float(reported) if reported is not None else estimate_cost(calls)
+        basis = "stand_reported" if reported is not None else ("token_tariff_estimate" if cost is not None else "unknown")
+        SPENT["requests"].append({
+            "request_id": out["request_id"], "cost_usd": cost, "cost_basis": basis,
+            "llm_calls": [{k: v for k, v in call.items()
+                           if k == "gen_ai.request.model" or k.startswith("gen_ai.usage.")}
+                          for call in calls]})
+        SPENT["cost_usd"] = (SPENT["cost_usd"] + cost
+                             if SPENT["cost_usd"] is not None and cost is not None else None)
         return out
     stand.chat = metered
 
@@ -401,7 +434,10 @@ def main(argv) -> int:
         "ran_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "passed": passed, "failed": failed, "skipped": skipped, "total": len(rows),
         "machine": {"agent_calls": SPENT["agent_calls"],
-                    "cost_usd": round(SPENT["cost_usd"], 4)},
+                    "cost_usd": round(SPENT["cost_usd"], 9) if SPENT["cost_usd"] is not None else None,
+                    "cost_basis": sorted({r["cost_basis"] for r in SPENT["requests"]}),
+                    "provider_reconciled": False,
+                    "requests": SPENT["requests"]},
         "unit_tests": units, "exit_code": code,
         "cases": [{"id": r["id"], "set": r["set"], "layer": r["layer"], "gate": r["gate"],
                    "assertion": r["verdict"]["assertion"], "passed": r["verdict"]["passed"],
@@ -414,7 +450,7 @@ def main(argv) -> int:
     print(f"{passed}/{len(rows)} passed, {failed} failed"
           + (f", {skipped} skipped" if skipped else "")
           + f"   elapsed {elapsed}s   agent calls {SPENT['agent_calls']}"
-          f"   ${SPENT['cost_usd']:.4f}")
+          + (f"   ${SPENT['cost_usd']:.6f}" if SPENT["cost_usd"] is not None else "   cost unknown"))
     for k, v in units.items():
         if k != "l11_dir":
             print(f"unit-тести {k}: {v.get('summary', v.get('status'))}")
