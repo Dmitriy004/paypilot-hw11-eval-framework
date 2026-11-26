@@ -24,7 +24,10 @@
       false
     ]
   },
-  "reporting_duration_seconds": null,
+  "reporting_duration_seconds": 1,
   "reporting_command_execution_confirmed": true,
-  "reporting_output_matches_records": true
+  "reporting_output_matches_records": true,
+  "reporting_duration_minutes": 0.016666666666666666,
+  "reporting_timing_scope": "personal reading of compare output; not command runtime",
+  "measurement_limitations": "sequential reading of the same case IDs; timestamps and sub-second precision not recorded; not a blinded experiment"
 }
