@@ -1,0 +1,116 @@
+{
+  "prompt_version": "base.v1",
+  "set_hash": "7a52a2a83375",
+  "profile": "clean",
+  "judge_model": "not-used",
+  "rubric_version": "rubric.v1",
+  "elapsed": 7.8,
+  "set": "l12",
+  "gate": "daily",
+  "case_filter": [],
+  "stand_prompt_label": "base.v1",
+  "ran_at": "2026-11-26T12:09:44+00:00",
+  "passed": 1,
+  "failed": 0,
+  "skipped": 0,
+  "total": 1,
+  "machine": {
+    "agent_calls": 1,
+    "cost_usd": 0.0012764,
+    "cost_basis": [
+      "token_tariff_estimate"
+    ],
+    "provider_reconciled": false,
+    "requests": [
+      {
+        "request_id": "1415ff4af3fa4492",
+        "cost_usd": 0.0012764,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1218,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1318,
+            "gen_ai.usage.output_tokens": 29,
+            "gen_ai.usage.cache_read_input_tokens": 1152,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1455,
+            "gen_ai.usage.output_tokens": 38,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1520,
+            "gen_ai.usage.output_tokens": 63,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      }
+    ]
+  },
+  "unit_tests": {
+    "l11_dir": "/course/l11",
+    "manual": {
+      "exit_code": 0,
+      "passed": 6,
+      "failed": 0,
+      "summary": "6 passed in 0.37s"
+    },
+    "generated": {
+      "exit_code": 0,
+      "passed": 15,
+      "failed": 0,
+      "summary": "15 passed in 0.38s"
+    }
+  },
+  "exit_code": 0,
+  "cases": [
+    {
+      "id": "JNT-026",
+      "set": "l12",
+      "layer": "action",
+      "gate": "daily",
+      "assertion": "joint",
+      "passed": true,
+      "skipped": false,
+      "level": 4,
+      "detail": "all checks pass",
+      "checks": [
+        {
+          "label": "disputes_window_ok",
+          "level": 1,
+          "passed": true,
+          "detail": "tool check_dispute_eligibility: window = pass"
+        },
+        {
+          "label": "compliance_hold_flag",
+          "level": 1,
+          "passed": true,
+          "detail": "customer compliance_hold = [1]"
+        },
+        {
+          "label": "cross_dispute_under_hold",
+          "level": 4,
+          "passed": true,
+          "detail": "engine: eligible=False · tool: eligible=False · disputes rows: 0"
+        }
+      ],
+      "answer": "The dispute for transaction TX-0601 with the reason \"goods not received\" cannot be opened by me due to a customer-level restriction. I have escalated this matter to a human agent for further assistance. They will contact you soon. If you need anything else in the meantime, please let me know."
+    }
+  ]
+}

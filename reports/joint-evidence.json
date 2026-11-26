@@ -1,0 +1,243 @@
+[
+  {
+    "defects": "",
+    "record": "reports/run-20261126T120944Z.json",
+    "exit_code": 0,
+    "request_id": "1415ff4af3fa4492",
+    "root_span_id": "49f98e38d46241c8",
+    "root_conditions": {
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "llm.provider": "openai",
+      "run.model": "gpt-4.1-mini-2025-04-14"
+    },
+    "tool_spans": [
+      {
+        "span_id": "291b50a1c7a2420b",
+        "name": "tool.check_dispute_eligibility",
+        "arguments": {
+          "transaction_id": "TX-0601",
+          "reason_code": "goods_not_received"
+        },
+        "result": {
+          "eligible": false,
+          "reason_code": "goods_not_received",
+          "window_days": 90,
+          "tx_date": "2026-08-16",
+          "as_of": "2026-09-15",
+          "deadline": "2026-11-14",
+          "checks": {
+            "reason_code": "pass",
+            "tx_status": "pass",
+            "window": "pass",
+            "compliance_hold": "fail: a customer-level restriction applies; escalation required"
+          }
+        }
+      },
+      {
+        "span_id": "2d38f4d23f974dc9",
+        "name": "tool.escalate_to_human",
+        "arguments": {
+          "customer_id": "CUS-0006",
+          "reason": "Dispute for transaction TX-0601 blocked by customer-level restriction"
+        },
+        "result": {
+          "escalation_id": 1,
+          "status": "queued"
+        }
+      }
+    ],
+    "customers": [
+      {
+        "id": "CUS-0006",
+        "compliance_hold": 1
+      }
+    ],
+    "disputes": [],
+    "defects_after_run": {
+      "profile": "clean",
+      "known_profiles": [
+        "clean",
+        "lesson-01",
+        "lesson-02",
+        "lesson-03",
+        "lesson-04",
+        "lesson-05",
+        "lesson-06",
+        "lesson-07",
+        "lesson-08",
+        "lesson-09",
+        "lesson-10",
+        "lesson-11",
+        "lesson-12",
+        "lesson-13",
+        "lesson-14"
+      ],
+      "all_defects": [
+        "D01",
+        "D02",
+        "D03",
+        "D04",
+        "D05",
+        "D06",
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D14",
+        "D15",
+        "D16",
+        "D17",
+        "D18",
+        "D19",
+        "D20",
+        "D21",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D26",
+        "D27",
+        "D28",
+        "D29"
+      ],
+      "profile_defects": [],
+      "extra_defects": [],
+      "active": [],
+      "scope": "server",
+      "details": {}
+    },
+    "trace_excerpt_scope": "tool inputs/results and post-run rows, not answer text"
+  },
+  {
+    "defects": "D26",
+    "record": "reports/run-20261126T120952Z.json",
+    "exit_code": 1,
+    "request_id": "c42443a582a14912",
+    "root_span_id": "fbeffdfb2cbf4cd5",
+    "root_conditions": {
+      "run.profile": "clean",
+      "run.active_defects": [
+        "D26"
+      ],
+      "prompt.version": "base.v1",
+      "llm.provider": "openai",
+      "run.model": "gpt-4.1-mini-2025-04-14"
+    },
+    "tool_spans": [
+      {
+        "span_id": "4ee1deb0f6c4428d",
+        "name": "tool.check_dispute_eligibility",
+        "arguments": {
+          "transaction_id": "TX-0601",
+          "reason_code": "goods_not_received"
+        },
+        "result": {
+          "eligible": true,
+          "reason_code": "goods_not_received",
+          "window_days": 90,
+          "tx_date": "2026-08-16",
+          "as_of": "2026-09-15",
+          "deadline": "2026-11-14",
+          "checks": {
+            "reason_code": "pass",
+            "tx_status": "pass",
+            "window": "pass",
+            "compliance_hold": "pass"
+          }
+        }
+      },
+      {
+        "span_id": "631da75735ef4ae9",
+        "name": "tool.create_dispute",
+        "arguments": {
+          "transaction_id": "TX-0601",
+          "reason_code": "goods_not_received"
+        },
+        "result": {
+          "dispute_id": 1,
+          "status": "open"
+        }
+      }
+    ],
+    "customers": [
+      {
+        "id": "CUS-0006",
+        "compliance_hold": 1
+      }
+    ],
+    "disputes": [
+      {
+        "id": 1,
+        "transaction_id": "TX-0601",
+        "account_id": "ACC-1007",
+        "reason_code": "goods_not_received",
+        "amount": 310.0,
+        "currency": "EUR",
+        "status": "open",
+        "created_at": "2026-09-15T10:00:00+00:00"
+      }
+    ],
+    "defects_after_run": {
+      "profile": "clean",
+      "known_profiles": [
+        "clean",
+        "lesson-01",
+        "lesson-02",
+        "lesson-03",
+        "lesson-04",
+        "lesson-05",
+        "lesson-06",
+        "lesson-07",
+        "lesson-08",
+        "lesson-09",
+        "lesson-10",
+        "lesson-11",
+        "lesson-12",
+        "lesson-13",
+        "lesson-14"
+      ],
+      "all_defects": [
+        "D01",
+        "D02",
+        "D03",
+        "D04",
+        "D05",
+        "D06",
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D14",
+        "D15",
+        "D16",
+        "D17",
+        "D18",
+        "D19",
+        "D20",
+        "D21",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D26",
+        "D27",
+        "D28",
+        "D29"
+      ],
+      "profile_defects": [],
+      "extra_defects": [],
+      "active": [],
+      "scope": "server",
+      "details": {}
+    },
+    "trace_excerpt_scope": "tool inputs/results and post-run rows, not answer text"
+  }
+]

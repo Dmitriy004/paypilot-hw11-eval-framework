@@ -1,0 +1,28 @@
+{
+  "kind": "personal_manual_comparison",
+  "duration_seconds": 185,
+  "duration_minutes": 3.0833333333333335,
+  "start_timestamp": null,
+  "finish_timestamp": null,
+  "timestamps_note": "not recorded separately; not inferred from message interval",
+  "source_records": [
+    "reports/run-20261125T231236Z.json",
+    "reports/run-20261125T231447Z.json"
+  ],
+  "cases_compared": 37,
+  "reported_flips": {
+    "CMP-009": [
+      false,
+      true
+    ],
+    "LIM-002": [
+      false,
+      true
+    ],
+    "DIS-004-N": [
+      true,
+      false
+    ]
+  },
+  "reporting_duration_seconds": null
+}
