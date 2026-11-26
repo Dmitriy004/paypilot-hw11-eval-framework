@@ -344,7 +344,54 @@ def compare(path_a: str, path_b: str) -> int:
     вердикт (поле "cases": id і passed). Код повернення:
       0 — порівнювані: set_hash однаковий і різниться не більше однієї умови;
       1 — не порівнювані."""
-    raise NotImplementedError("КРОК 6: compare() ще не написано")
+    try:
+        records = [json.loads(Path(path).read_text(encoding="utf-8"))
+                   for path in (path_a, path_b)]
+    except (OSError, json.JSONDecodeError) as error:
+        print(f"не порівнювані: {error}")
+        return 1
+    a, b = records
+    missing = [f"{side}.{field}" for side, row in zip(("A", "B"), records)
+               for field in (*VERSION_FIELDS, "cases") if field not in row]
+    if missing:
+        print("не порівнювані: відсутні поля " + ", ".join(missing))
+        return 1
+    print(f"{'поле':<22} {'A':<26} B")
+    for field in VERSION_FIELDS:
+        mark = "=" if a[field] == b[field] else "≠"
+        print(f"{field:<22} {str(a[field]):<26} {b[field]} {mark}")
+    differences = [field for field in CONDITIONS if a[field] != b[field]]
+    def models(row):
+        return sorted({call["gen_ai.request.model"]
+                       for request in row.get("machine", {}).get("requests", [])
+                       for call in request.get("llm_calls", [])
+                       if call.get("gen_ai.request.model")})
+    models_a, models_b = models(a), models(b)
+    if models_a or models_b:
+        print(f"agent_models: {models_a} -> {models_b}")
+        if models_a != models_b:
+            differences.append("agent_models")
+    indexes = [{row["id"]: row for row in record["cases"]} for record in records]
+    rows_a, rows_b = indexes
+    ids_equal = rows_a.keys() == rows_b.keys()
+    unique_ids = all(len(index) == len(record["cases"])
+                     for index, record in zip(indexes, records))
+    flipped = [cid for cid in sorted(rows_a.keys() | rows_b.keys())
+               if rows_a.get(cid, {}).get("passed") != rows_b.get(cid, {}).get("passed")]
+    print(f"passed/failed: {a.get('passed')}/{a.get('failed')} -> {b.get('passed')}/{b.get('failed')}")
+    print("кейси, що змінили вердикт: " + (", ".join(flipped) or "немає"))
+    for cid in flipped:
+        old, new = rows_a.get(cid, {}), rows_b.get(cid, {})
+        print(f"  {cid}: {old.get('passed')} -> {new.get('passed')} ({new.get('assertion', old.get('assertion', '-'))})")
+    comparable = (a["set_hash"] == b["set_hash"] and len(differences) <= 1
+                  and ids_equal and unique_ids)
+    if comparable:
+        print("порівнювані: " + ("змінилася одна умова — " + differences[0]
+                                  if differences else "умови однакові"))
+    else:
+        print("не порівнювані: " + ", ".join(differences)
+              + ("; різний або неунікальний склад ID" if not ids_equal or not unique_ids else ""))
+    return 0 if comparable else 1
 
 
 
