@@ -1,0 +1,18 @@
+{
+  "kind": "observed_lms_submission_confirmation",
+  "page_url": "https://www.edu.goit.global/uk/learn/53575439/54507480/55543737/homework",
+  "submitted_repository": "https://github.com/Dmitriy004/paypilot-hw11-eval-framework",
+  "main_commit_at_submission": "00d46adad93c211acb5f8060fb6a7d6314e52cd2",
+  "verified_code_source_commit": "f90b35155bc753406b82d55a5b9c1ed50110d195",
+  "confirmation_recorded_utc": "2026-11-26T12:35:53Z",
+  "confirmation_recorded_local": "2026-11-26T13:35:53+01:00",
+  "time_scope": "clock reading after observing successful UI, not exact server submit time",
+  "observed_status": "Завдання на перевірці",
+  "observed_heading": "Ти відправив домашнє завдання",
+  "observed_message": "Супер, ментор скоро це перевірить",
+  "submitted_link_verified_in_success_state": true,
+  "mentor_acceptance_confirmed": false,
+  "screenshot_local_path": "C:/Users/Admin/.codex/visualizations/2026/09/27/01a0e467-0383-72e0-a6d1-ac067783f825/hw11-submitted.jpg",
+  "screenshot_sha256": "a5bc83735c57d7e631935aeddb504bc12161bdd3c11227222a321be8c6cf0c1b",
+  "screenshot_committed": false
+}
