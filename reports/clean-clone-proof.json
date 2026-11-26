@@ -1,0 +1,100 @@
+{
+  "kind": "clean_github_clone",
+  "repository": "https://github.com/Dmitriy004/paypilot-hw11-eval-framework.git",
+  "source_commit": "f90b35155bc753406b82d55a5b9c1ed50110d195",
+  "clone_path": "C:\\Users\\Admin\\AppData\\Local\\Temp\\paypilot-hw11-github-clean-o_u9_k5e\\kit",
+  "environment_prerequisites": {
+    "STAND_DIR": "C:/Users/Admin/PycharmProjects/paypilot-stand-shared",
+    "L11_DIR": "C:/Users/Admin/PycharmProjects/paypilot-hw10-ai-adoption-resit",
+    "stand_already_running": true,
+    "author_local_env_copied": false
+  },
+  "initial_git_status_clean": true,
+  "tracked_changes_after_run": "",
+  "commands": [
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--project-name",
+        "hw11-clean-o_u9_k5e",
+        "run",
+        "--rm",
+        "eval",
+        "--dry-run"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--project-name",
+        "hw11-clean-o_u9_k5e",
+        "run",
+        "--rm",
+        "eval"
+      ],
+      "exit_code": 1
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--project-name",
+        "hw11-clean-o_u9_k5e",
+        "run",
+        "--rm",
+        "--entrypoint",
+        "pytest",
+        "eval",
+        "tests",
+        "-q"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--project-name",
+        "hw11-clean-o_u9_k5e",
+        "run",
+        "--rm",
+        "eval",
+        "--compare",
+        "reports/run-20261125T231236Z.json",
+        "reports/run-20261125T231447Z.json"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "new_report": "reports/run-20261126T122236Z.json",
+  "total": 71,
+  "passed": 62,
+  "failed": 9,
+  "machine": {
+    "agent_calls": 72,
+    "cost_usd": 0.0747344,
+    "cost_basis": [
+      "token_tariff_estimate"
+    ]
+  },
+  "unit_manual": {
+    "exit_code": 0,
+    "passed": 6,
+    "failed": 0,
+    "summary": "6 passed in 0.25s"
+  },
+  "unit_generated": {
+    "exit_code": 0,
+    "passed": 15,
+    "failed": 0,
+    "summary": "15 passed in 0.37s"
+  },
+  "offline_tests_passed": 42,
+  "compare_exit_code": 0,
+  "no_code_edit_between_clone_and_record": true,
+  "raw_report_sha256": "3d6b9521e23f80e79d5d08037e8a8277af502630dfcb459ab6c09d012e2e4c62",
+  "external_proof_sha256": "fead429a9e0d1fe9121786e09ce59495e0a4b99e52a99a18f9c31f503070abcc"
+}

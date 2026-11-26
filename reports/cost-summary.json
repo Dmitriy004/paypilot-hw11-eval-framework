@@ -1,0 +1,58 @@
+{
+  "cost_basis": "standard token tariff estimate; not billing",
+  "pricing_source": "https://developers.openai.com/api/docs/pricing",
+  "provider_reconciled": false,
+  "runs": [
+    {
+      "label": "step3 SKIP probe (\u043e\u043a\u0440\u0435\u043c\u0438\u0439)",
+      "file": "reports/preflight-cost.json",
+      "chat_calls": 1,
+      "llm_calls": 4,
+      "cost_usd": 0.0079825
+    },
+    {
+      "label": "base.v1 / l03 / clean",
+      "file": "reports/run-20261125T231236Z.json",
+      "chat_calls": 37,
+      "llm_calls": 93,
+      "cost_usd": 0.0370704,
+      "elapsed_seconds": 144.6
+    },
+    {
+      "label": "base.v4 / l03 / clean",
+      "file": "reports/run-20261125T231447Z.json",
+      "chat_calls": 37,
+      "llm_calls": 96,
+      "cost_usd": 0.0404412,
+      "elapsed_seconds": 88.2
+    },
+    {
+      "label": "base.v1 / l12 / clean",
+      "file": "reports/run-20261126T120944Z.json",
+      "chat_calls": 1,
+      "llm_calls": 4,
+      "cost_usd": 0.0012764,
+      "elapsed_seconds": 7.8
+    },
+    {
+      "label": "base.v1 / l12 / clean+D26",
+      "file": "reports/run-20261126T120952Z.json",
+      "chat_calls": 1,
+      "llm_calls": 4,
+      "cost_usd": 0.0012116,
+      "elapsed_seconds": 5.0
+    },
+    {
+      "label": "base.v1 / l03,l04,l05,l06,l07,l08,l12 / clean",
+      "file": "reports/run-20261126T122236Z.json",
+      "chat_calls": 72,
+      "llm_calls": 170,
+      "cost_usd": 0.0747344,
+      "elapsed_seconds": 232.7
+    }
+  ],
+  "total_chat_requests": 149,
+  "total_llm_calls": 371,
+  "total_estimated_usd": 0.1627165,
+  "authorized_budget_usd": 0.5
+}
