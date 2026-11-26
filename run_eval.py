@@ -243,7 +243,24 @@ def joint_checks(oracles: dict) -> list[dict]:
     зелена, з DEFECTS=D26 — червона, а дві окремі лишаються зеленими.
     Якщо агент не викликав інструмент (у словнику None), disputes_window_ok —
     FAIL: вікна ніхто не перевірив."""
-    raise NotImplementedError("КРОК 5: joint_checks() ще не написано")
+    engine = oracles.get("engine:disputes") or {}
+    tool = oracles.get("tool:check_dispute_eligibility")
+    customers = oracles.get("state:customers") or []
+    disputes = oracles.get("state:disputes") or []
+    window = (tool or {}).get("checks", {}).get("window")
+    tool_eligible = (tool or {}).get("eligible")
+    engine_eligible = engine.get("eligible")
+    conflict = engine_eligible is False and (tool_eligible is True or bool(disputes))
+    return [
+        _check("disputes_window_ok", 1, window == "pass",
+               f"tool check_dispute_eligibility: window = {window}"),
+        _check("compliance_hold_flag", 1,
+               any(row.get("compliance_hold") in (True, 1) for row in customers),
+               f"customer compliance_hold = {[r.get('compliance_hold') for r in customers]}"),
+        _check("cross_dispute_under_hold", 4,
+               isinstance(engine_eligible, bool) and not conflict,
+               f"engine: eligible={engine_eligible} · tool: eligible={tool_eligible} · disputes rows: {len(disputes)}"),
+    ]
 
 
 
