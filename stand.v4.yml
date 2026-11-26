@@ -1,0 +1,6 @@
+# Compose paths resolve relative to the first (stand) compose file.
+# L11_DIR is the same host checkout used by eval; its prompt remains unchanged.
+services:
+  stand:
+    volumes:
+      - ${L11_DIR:-../l11}/agent-prompt/base.v4.md:/stand/prompts/base.v1.md:ro

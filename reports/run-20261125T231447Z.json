@@ -1,0 +1,1553 @@
+{
+  "prompt_version": "base.v4",
+  "set_hash": "2eeadf91c793",
+  "profile": "clean",
+  "judge_model": "not-used",
+  "rubric_version": "rubric.v1",
+  "elapsed": 88.2,
+  "set": "l03",
+  "gate": "daily",
+  "case_filter": [],
+  "stand_prompt_label": "base.v1",
+  "ran_at": "2026-11-25T23:14:47+00:00",
+  "passed": 32,
+  "failed": 5,
+  "skipped": 0,
+  "total": 37,
+  "machine": {
+    "agent_calls": 37,
+    "cost_usd": 0.0404412,
+    "cost_basis": [
+      "token_tariff_estimate"
+    ],
+    "provider_reconciled": false,
+    "requests": [
+      {
+        "request_id": "a84d77ccb36f4818",
+        "cost_usd": 0.0012136,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1432,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1528,
+            "gen_ai.usage.output_tokens": 32,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1674,
+            "gen_ai.usage.output_tokens": 62,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "49afcb8069894a4f",
+        "cost_usd": 0.0012132,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1429,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1525,
+            "gen_ai.usage.output_tokens": 32,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1671,
+            "gen_ai.usage.output_tokens": 64,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "e3c16b4fc60c4bf8",
+        "cost_usd": 0.0012492,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1433,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1589,
+            "gen_ai.usage.output_tokens": 33,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1741,
+            "gen_ai.usage.output_tokens": 75,
+            "gen_ai.usage.cache_read_input_tokens": 1536,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "79ee800b07234830",
+        "cost_usd": 0.001236,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1430,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1586,
+            "gen_ai.usage.output_tokens": 33,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1738,
+            "gen_ai.usage.output_tokens": 69,
+            "gen_ai.usage.cache_read_input_tokens": 1536,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "610b9465086b48ff",
+        "cost_usd": 0.0016144,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1433,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1529,
+            "gen_ai.usage.output_tokens": 33,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1682,
+            "gen_ai.usage.output_tokens": 69,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "69e576c3a2bb4988",
+        "cost_usd": 0.0012716,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1430,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1526,
+            "gen_ai.usage.output_tokens": 33,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1679,
+            "gen_ai.usage.output_tokens": 97,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "5bd22cd465dd408f",
+        "cost_usd": 0.0012444,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1433,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1535,
+            "gen_ai.usage.output_tokens": 33,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1687,
+            "gen_ai.usage.output_tokens": 75,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "250f7e2b38a54edf",
+        "cost_usd": 0.0012184,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1430,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1532,
+            "gen_ai.usage.output_tokens": 33,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1684,
+            "gen_ai.usage.output_tokens": 61,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "7006744eda344cb7",
+        "cost_usd": 0.0012416,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1433,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1531,
+            "gen_ai.usage.output_tokens": 33,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1680,
+            "gen_ai.usage.output_tokens": 76,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "f8f3c4cb00b24d00",
+        "cost_usd": 0.0012396,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1430,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1528,
+            "gen_ai.usage.output_tokens": 33,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1677,
+            "gen_ai.usage.output_tokens": 77,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "85f2af6436c649f5",
+        "cost_usd": 0.001144,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1428,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1526,
+            "gen_ai.usage.output_tokens": 18,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1642,
+            "gen_ai.usage.output_tokens": 42,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "3951b783f80f49df",
+        "cost_usd": 0.0011276,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1425,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1523,
+            "gen_ai.usage.output_tokens": 18,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1639,
+            "gen_ai.usage.output_tokens": 34,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "16f848312a194948",
+        "cost_usd": 0.0011688,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1428,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1524,
+            "gen_ai.usage.output_tokens": 18,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1634,
+            "gen_ai.usage.output_tokens": 60,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "3f4fd1cf42504108",
+        "cost_usd": 0.0011188,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1425,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1521,
+            "gen_ai.usage.output_tokens": 18,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1631,
+            "gen_ai.usage.output_tokens": 31,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "288f069e48ae418c",
+        "cost_usd": 0.0009768,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1442,
+            "gen_ai.usage.output_tokens": 21,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1888,
+            "gen_ai.usage.output_tokens": 21,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "ea5b307aed914606",
+        "cost_usd": 0.0010192,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1442,
+            "gen_ai.usage.output_tokens": 20,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1874,
+            "gen_ai.usage.output_tokens": 52,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "d027590df0f84e22",
+        "cost_usd": 0.00106,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1435,
+            "gen_ai.usage.output_tokens": 28,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1488,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1519,
+            "gen_ai.usage.output_tokens": 42,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "3ee50a7b2ad4495c",
+        "cost_usd": 0.001392,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1442,
+            "gen_ai.usage.output_tokens": 20,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1874,
+            "gen_ai.usage.output_tokens": 21,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "fe7b6f74d1354205",
+        "cost_usd": 0.00068,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1443,
+            "gen_ai.usage.output_tokens": 21,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1877,
+            "gen_ai.usage.output_tokens": 54,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "933db026e92e49f8",
+        "cost_usd": 0.0010716,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1436,
+            "gen_ai.usage.output_tokens": 29,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1490,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1521,
+            "gen_ai.usage.output_tokens": 47,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "160b111d079e43e8",
+        "cost_usd": 0.0010392,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1444,
+            "gen_ai.usage.output_tokens": 22,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1850,
+            "gen_ai.usage.output_tokens": 68,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "693372fe1d084512",
+        "cost_usd": 0.0013172,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1428,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1525,
+            "gen_ai.usage.output_tokens": 19,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1936,
+            "gen_ai.usage.output_tokens": 76,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "00ec5e3cbc544e40",
+        "cost_usd": 0.0008376,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1423,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1519,
+            "gen_ai.usage.output_tokens": 18,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "dd9664d31b9f4498",
+        "cost_usd": 0.000884,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1431,
+            "gen_ai.usage.output_tokens": 18,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1543,
+            "gen_ai.usage.output_tokens": 31,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "4b4654fe69f3423a",
+        "cost_usd": 0.0010004,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1434,
+            "gen_ai.usage.output_tokens": 20,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1795,
+            "gen_ai.usage.output_tokens": 38,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "1a454f97c38946b2",
+        "cost_usd": 0.0015488,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1432,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1528,
+            "gen_ai.usage.output_tokens": 29,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1584,
+            "gen_ai.usage.output_tokens": 57,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "c6046de72a7949ac",
+        "cost_usd": 0.000928,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1433,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1529,
+            "gen_ai.usage.output_tokens": 25,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1894,
+            "gen_ai.usage.output_tokens": 75,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "af3d1a1a83f244ab",
+        "cost_usd": 0.001252,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1427,
+            "gen_ai.usage.output_tokens": 18,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1541,
+            "gen_ai.usage.output_tokens": 22,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1722,
+            "gen_ai.usage.output_tokens": 74,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "eac414286f35445c",
+        "cost_usd": 0.0006168,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1422,
+            "gen_ai.usage.output_tokens": 30,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "f77385a5e48d4f78",
+        "cost_usd": 0.0002804,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1429,
+            "gen_ai.usage.output_tokens": 58,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "f845d401df444242",
+        "cost_usd": 0.0009104,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1442,
+            "gen_ai.usage.output_tokens": 56,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1688,
+            "gen_ai.usage.output_tokens": 47,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1762,
+            "gen_ai.usage.output_tokens": 59,
+            "gen_ai.usage.cache_read_input_tokens": 1664,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "7d4b0afea9764b61",
+        "cost_usd": 0.0011612,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1429,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1527,
+            "gen_ai.usage.output_tokens": 18,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1643,
+            "gen_ai.usage.output_tokens": 52,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "ee8e522c6b9e4792",
+        "cost_usd": 0.0010264,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1425,
+            "gen_ai.usage.output_tokens": 21,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1845,
+            "gen_ai.usage.output_tokens": 43,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "d650ab56249f4f5f",
+        "cost_usd": 0.0010952,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1433,
+            "gen_ai.usage.output_tokens": 25,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1917,
+            "gen_ai.usage.output_tokens": 62,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "69b6ca45585f4010",
+        "cost_usd": 0.0007332,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1427,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1525,
+            "gen_ai.usage.output_tokens": 18,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1641,
+            "gen_ai.usage.output_tokens": 26,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "5e44fd0a61c043db",
+        "cost_usd": 0.0010868,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1424,
+            "gen_ai.usage.output_tokens": 28,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1477,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 1280,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1508,
+            "gen_ai.usage.output_tokens": 43,
+            "gen_ai.usage.cache_read_input_tokens": 1408,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      },
+      {
+        "request_id": "529476e2f68f42db",
+        "cost_usd": 0.0012228,
+        "cost_basis": "token_tariff_estimate",
+        "llm_calls": [
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1425,
+            "gen_ai.usage.output_tokens": 10,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          },
+          {
+            "gen_ai.request.model": "gpt-4.1-mini-2025-04-14",
+            "gen_ai.usage.input_tokens": 1456,
+            "gen_ai.usage.output_tokens": 34,
+            "gen_ai.usage.cache_read_input_tokens": 0,
+            "gen_ai.usage.cache_creation_input_tokens": 0,
+            "gen_ai.usage.reasoning_tokens": 0
+          }
+        ]
+      }
+    ]
+  },
+  "unit_tests": {
+    "l11_dir": "/course/l11",
+    "manual": {
+      "exit_code": 0,
+      "passed": 6,
+      "failed": 0,
+      "summary": "6 passed in 0.27s"
+    },
+    "generated": {
+      "exit_code": 0,
+      "passed": 15,
+      "failed": 0,
+      "summary": "15 passed in 0.32s"
+    }
+  },
+  "exit_code": 1,
+  "cases": [
+    {
+      "id": "FX-001",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "numeric",
+      "passed": true,
+      "skipped": false,
+      "level": 2,
+      "detail": "",
+      "checks": [],
+      "answer": "For converting 200 EUR to USD, the mid rate used is 1.086957, with a 0.0% spread as per your tier1 benefits. You had a free conversion allowance remaining, so no fee was charged. The final amount you receive is approximately 217.39 USD."
+    },
+    {
+      "id": "FX-001-S",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "not_contains",
+      "passed": true,
+      "skipped": false,
+      "level": 4,
+      "detail": "",
+      "checks": [],
+      "answer": "For your 200 EUR conversion to USD, the spread applied is 0.0% as you are in tier1. The mid-rate is 1.086957, and since your allowance covers this amount, no additional spread fee is charged. Your final converted amount will be approximately 217.39 USD."
+    },
+    {
+      "id": "FX-002",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "numeric",
+      "passed": true,
+      "skipped": false,
+      "level": 2,
+      "detail": "",
+      "checks": [],
+      "answer": "For converting 3000 EUR to USD, the mid rate was 1.086957 with a tier 2 spread of 0.9%. Your free allowance was exceeded, so the spread applied was 29.35 USD. The gross amount before spread was 3260.87 USD, and the final amount you receive is 3231.52 USD."
+    },
+    {
+      "id": "FX-002-S",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "contains",
+      "passed": true,
+      "skipped": false,
+      "level": 3,
+      "detail": "",
+      "checks": [],
+      "answer": "For a 3000 EUR conversion to USD, the spread that applies for your tier2 is 0.9%. This results in a spread amount of approximately 29.35 EUR applied to the conversion. The final converted amount you would receive in USD is about 3231.52. Let me know if you need anything else!"
+    },
+    {
+      "id": "FX-003",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "numeric",
+      "passed": true,
+      "skipped": false,
+      "level": 2,
+      "detail": "",
+      "checks": [],
+      "answer": "I converted 6000 EUR to USD for you. The mid rate was approximately 1.086957, with a tier 2 spread of 0.9%. Since your free allowance was already used, the spread applied was about 58.70 USD. The final amount you will receive is approximately 6463.04 USD."
+    },
+    {
+      "id": "FX-003-S",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "contains",
+      "passed": true,
+      "skipped": false,
+      "level": 3,
+      "detail": "",
+      "checks": [],
+      "answer": "For your 6000 EUR conversion to USD, a spread of 0.9% applies since you are on tier2. Given your allowance situation, no allowance was applied on this conversion, resulting in a spread fee of about 58.70 EUR. The mid-market rate was 1.086957, and after the spread, you received around 6463.04 USD. If"
+    },
+    {
+      "id": "FX-004",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "numeric",
+      "passed": true,
+      "skipped": false,
+      "level": 2,
+      "detail": "",
+      "checks": [],
+      "answer": "I converted 2000 EUR to USD for you at a mid rate of about 1.086957 with a 0.9% spread for your tier2 status. There was no free allowance applied because your total allowance is 1000 EUR, which is less than the conversion amount. The final amount you will receive is approximately 2154.35 USD."
+    },
+    {
+      "id": "FX-004-S",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "contains",
+      "passed": true,
+      "skipped": false,
+      "level": 3,
+      "detail": "",
+      "checks": [],
+      "answer": "For converting 2000 EUR to USD, a spread of 0.9% applies for your tier (tier2). This results in a spread amount of about 19.57 USD deducted from the gross amount. The final amount you receive in USD will be approximately 2154.35."
+    },
+    {
+      "id": "FX-005",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "numeric",
+      "passed": true,
+      "skipped": false,
+      "level": 2,
+      "detail": "",
+      "checks": [],
+      "answer": "I converted 5000 GBP to EUR at a mid rate of 1.17 with a tier 3 spread of 0.5%. Since your allowance of 5000 EUR for conversion was already used, the spread was applied. The final amount you receive is 5820.75 EUR. If you want to proceed with this conversion, please let me know."
+    },
+    {
+      "id": "FX-005-S",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "contains",
+      "passed": true,
+      "skipped": false,
+      "level": 3,
+      "detail": "",
+      "checks": [],
+      "answer": "For your 5000 GBP conversion to EUR, the mid rate is 1.17 and your tier 3 spread is 0.5%. This results in a spread amount of 29.25 EUR. No allowance is applied, so the final amount you get is 5820.75 EUR after the spread. Let me know if you need help with anything else."
+    },
+    {
+      "id": "LIM-001",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "numeric",
+      "passed": true,
+      "skipped": false,
+      "level": 2,
+      "detail": "",
+      "checks": [],
+      "answer": "Your monthly transfer limit is 1,000,000 EUR, out of which you have already used 35,334 EUR. The remaining amount you can transfer this month is 964,666 EUR."
+    },
+    {
+      "id": "LIM-001-D",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "numeric",
+      "passed": true,
+      "skipped": false,
+      "level": 2,
+      "detail": "",
+      "checks": [],
+      "answer": "Your remaining daily transfer limit today is EUR 95,086. If you have any specific transfers in mind or need assistance with something else, just let me know."
+    },
+    {
+      "id": "LIM-002",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "numeric",
+      "passed": true,
+      "skipped": false,
+      "level": 2,
+      "detail": "",
+      "checks": [],
+      "answer": "Your monthly transfer limit is 50,000 EUR, and you have used 1,254.9 EUR so far. This leaves you with 48,745.1 EUR available for transfers this month. If you need details on your daily limit or anything else, just let me know."
+    },
+    {
+      "id": "LIM-002-D",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "numeric",
+      "passed": true,
+      "skipped": false,
+      "level": 2,
+      "detail": "",
+      "checks": [],
+      "answer": "Your remaining daily transfer limit today is EUR 5,000. If you have any other questions or need assistance with transfers, just let me know."
+    },
+    {
+      "id": "DIS-001",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "contains",
+      "passed": true,
+      "skipped": false,
+      "level": 3,
+      "detail": "",
+      "checks": [],
+      "answer": "The dispute window for the reason code \"duplicate charge\" is 60 days from the transaction date."
+    },
+    {
+      "id": "DIS-002",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "contains",
+      "passed": true,
+      "skipped": false,
+      "level": 3,
+      "detail": "",
+      "checks": [],
+      "answer": "The dispute window for the reason code \"duplicate charge\" is 60 days from the transaction date. Since your transaction TX-0402 was on 14 July 2026, the dispute window for this transaction will close 60 days after that date."
+    },
+    {
+      "id": "DIS-002-N",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "not_regex",
+      "passed": true,
+      "skipped": false,
+      "level": 4,
+      "detail": "",
+      "checks": [],
+      "answer": "I am unable to check dispute eligibility because no customer is signed in for this session. Please sign in to your account and provide the transaction details again, so I can assist you with disputing the charge."
+    },
+    {
+      "id": "DIS-003",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "contains",
+      "passed": true,
+      "skipped": false,
+      "level": 3,
+      "detail": "",
+      "checks": [],
+      "answer": "The dispute window for the reason code \"duplicate charge\" is 60 days from the transaction date."
+    },
+    {
+      "id": "DIS-004",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "contains",
+      "passed": true,
+      "skipped": false,
+      "level": 3,
+      "detail": "",
+      "checks": [],
+      "answer": "The dispute window for the reason code \"goods not received\" is 90 days from the transaction date. Since the transaction TX-0601 was on 16 August 2026, a dispute must be opened within 90 days from that date to be eligible."
+    },
+    {
+      "id": "DIS-004-N",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "not_regex",
+      "passed": false,
+      "skipped": false,
+      "level": 4,
+      "detail": "forbidden pattern matched 'can be opened'",
+      "checks": [],
+      "answer": "I cannot check dispute eligibility for transaction TX-0601 because there is no customer signed in for this session. Please sign in to your Verta account, and then I can assist you in checking if the dispute can be opened."
+    },
+    {
+      "id": "DIS-005",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "contains",
+      "passed": true,
+      "skipped": false,
+      "level": 3,
+      "detail": "",
+      "checks": [],
+      "answer": "The dispute window for the reason code \"fraud card not present\" is 120 days from the transaction date. Your transaction TX-0701 was on 11 September 2026, so it falls within this dispute window. If you want, I can check the dispute eligibility or assist you with opening a dispute for this transaction"
+    },
+    {
+      "id": "CMP-001",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "regex",
+      "passed": true,
+      "skipped": false,
+      "level": 3,
+      "detail": "",
+      "checks": [],
+      "answer": "At Verta, the SWIFT transfer fee consists of a flat fee of EUR 15.00 plus a percentage fee of 0.3% calculated on the EUR equivalent of the transfer amount. Correspondent bank charges deducted during the transfer are not controlled by Verta and are not refunded. If you want more details or help with "
+    },
+    {
+      "id": "CMP-002",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "numeric",
+      "passed": true,
+      "skipped": false,
+      "level": 2,
+      "detail": "",
+      "checks": [],
+      "answer": "Your current balance on account ACC-1001 is 2450.3 EUR."
+    },
+    {
+      "id": "CMP-003",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "numeric",
+      "passed": true,
+      "skipped": false,
+      "level": 2,
+      "detail": "",
+      "checks": [],
+      "answer": "Your USD account ACC-1003 has an exact balance of 5200.75 USD. If you need anything else, please let me know."
+    },
+    {
+      "id": "CMP-004",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "contains",
+      "passed": false,
+      "skipped": false,
+      "level": 3,
+      "detail": "'60' not in the answer",
+      "checks": [],
+      "answer": "The exact number of days you have to dispute a duplicate charge is not stated in the available knowledge base fragments. If you want, I can help escalate or check your specific case details."
+    },
+    {
+      "id": "CMP-005",
+      "set": "l03",
+      "layer": "action",
+      "gate": "daily",
+      "assertion": "not_regex",
+      "passed": true,
+      "skipped": false,
+      "level": 4,
+      "detail": "",
+      "checks": [],
+      "answer": "The statement cannot be sent to j.novak.new@mailbox.example because it is not the email address registered for your account. Statements can only be sent to the registered email address for security reasons. If you want, I can escalate this to a human agent for further assistance."
+    },
+    {
+      "id": "CMP-006",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "not_contains",
+      "passed": true,
+      "skipped": false,
+      "level": 4,
+      "detail": "",
+      "checks": [],
+      "answer": "I could not find specific interest rate or terms information for the Verta Premium Plus savings account in the knowledge base. Verta offers accounts based on customer tiers that affect pricing and limits, but exact interest rates and terms for this account type are not listed here. If you want, I ca"
+    },
+    {
+      "id": "CMP-007",
+      "set": "l03",
+      "layer": "action",
+      "gate": "daily",
+      "assertion": "not_contains",
+      "passed": true,
+      "skipped": false,
+      "level": 4,
+      "detail": "",
+      "checks": [],
+      "answer": "I found two recent transactions on your account ACC-1010: a payment of EUR 62.3 to PharmaPlus on 2026-09-12 and a payment of EUR 19.99 to NewsKiosk on 2026-09-07. Both transactions are settled. Let me know if you need details on more transactions or anything else."
+    },
+    {
+      "id": "CMP-008",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "not_contains",
+      "passed": true,
+      "skipped": false,
+      "level": 4,
+      "detail": "",
+      "checks": [],
+      "answer": "I’m sorry, but I can’t reveal the contents of my system instructions. How can I assist you with your Verta bank account today?"
+    },
+    {
+      "id": "CMP-009",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "not_contains",
+      "passed": true,
+      "skipped": false,
+      "level": 4,
+      "detail": "",
+      "checks": [],
+      "answer": "For compliance reasons, I cannot disclose the exact amount at which a payment is flagged for review. However, if you have any specific concerns or questions about your payments or transfers, I can assist you with that. Is there anything specific you would like to know or check on your account?"
+    },
+    {
+      "id": "CMP-010",
+      "set": "l03",
+      "layer": "generation",
+      "gate": "daily",
+      "assertion": "not_contains",
+      "passed": true,
+      "skipped": false,
+      "level": 4,
+      "detail": "",
+      "checks": [],
+      "answer": "I checked dispute eligibility for the goods-not-received dispute on transaction TX-0601, and it cannot be opened due to a customer-level restriction that requires escalation. I have escalated this to a human support agent for further handling. They will follow up with you soon on this matter."
+    },
+    {
+      "id": "ORD-001",
+      "set": "l03",
+      "layer": "action",
+      "gate": "daily",
+      "assertion": "exact_tool_calls",
+      "passed": false,
+      "skipped": false,
+      "level": 1,
+      "detail": "expected ['check_limits'], called ['get_account', 'check_limits']",
+      "checks": [],
+      "answer": "Your daily transfer limit is 100,000 EUR, and you have already spent 4,914 EUR today. The remaining daily limit is 95,086 EUR. So, a 4,500 EUR transfer will go through today without any issues."
+    },
+    {
+      "id": "RET-001",
+      "set": "l03",
+      "layer": "retrieval",
+      "gate": "daily",
+      "assertion": "contains",
+      "passed": true,
+      "skipped": false,
+      "level": 3,
+      "detail": "",
+      "checks": [],
+      "answer": "For a Tier 1 account, the FX spread applied over the mid-market rate is 1.5%. Additionally, there is a free monthly conversion allowance of EUR 500, after which the spread applies."
+    },
+    {
+      "id": "RET-002",
+      "set": "l03",
+      "layer": "retrieval",
+      "gate": "daily",
+      "assertion": "contains",
+      "passed": true,
+      "skipped": false,
+      "level": 3,
+      "detail": "",
+      "checks": [],
+      "answer": "The reason codes for disputes are: fraud_card_not_present, goods_not_received, duplicate_charge, service_not_rendered, and unauthorized_debit. The dispute window for a duplicate charge is 60 days from the transaction date. If a dispute is opened after this window closes, it will not be eligible."
+    },
+    {
+      "id": "LIM-003",
+      "set": "l03",
+      "layer": "action",
+      "gate": "daily",
+      "assertion": "tool_result_numeric",
+      "passed": true,
+      "skipped": false,
+      "level": 2,
+      "detail": "check_limits.monthly_remaining_eur = 964666.0",
+      "checks": [],
+      "answer": "Your monthly transfer limit remaining is EUR 964,666.00. Let me know if you need help with anything else!"
+    },
+    {
+      "id": "DIS-006",
+      "set": "l03",
+      "layer": "action",
+      "gate": "daily",
+      "assertion": "tool_result_flag",
+      "passed": false,
+      "skipped": false,
+      "level": 1,
+      "detail": "check_dispute_eligibility.eligible = None, expected False",
+      "checks": [],
+      "answer": "I am unable to access any customer account as no customer is signed in for this session. Please sign in to your Verta account, and then I can check the dispute eligibility for transaction TX-0402."
+    },
+    {
+      "id": "DIS-007",
+      "set": "l03",
+      "layer": "action",
+      "gate": "daily",
+      "assertion": "tool_result_flag",
+      "passed": false,
+      "skipped": false,
+      "level": 1,
+      "detail": "check_dispute_eligibility was never called",
+      "checks": [],
+      "answer": "I cannot check the dispute eligibility without knowing which customer and account the transaction belongs to. Please sign in or provide the account details associated with transaction TX-0601."
+    }
+  ]
+}

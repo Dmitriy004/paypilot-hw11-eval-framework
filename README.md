@@ -1,146 +1,46 @@
-# Кіт лабораторної L12: один контур замість шести запусків
+# PayPilot — ДЗ11 / L12: відтворюваний контур
 
-Порядок дій описано в темі L12. Цей файл пояснює, що де лежить і якими командами запускати.
+[Артефакт](eval-framework.md) · [Контракт](protocol/requirements.md) · [Прогноз до прогонів](protocol/forecast-runs.md) · [Умови та джерела](reports/run-environment.json)
 
-Стенд не змінюється: потрібен той самий `~/paypilot/paypilot-stand`, що й на попередніх заняттях (коміт `74f1995`), піднятий зі справжнім провайдером моделі. У кіті лежить ранер останніх занять (L03–L09) — це «ваші скрипти», з яких ви збираєте контур, — набори L03–L08, калібрувальний набір L09 і каркас `run_eval.py`.
+Кіт: [5db4dd0e99a77c3d9ef24f1d6a458cc58ae02293](https://github.com/TarasFedorenkoFTV/paypilot-l12-eval/tree/5db4dd0e99a77c3d9ef24f1d6a458cc58ae02293).
+Стенд: [paypilot-stand-shared / 74f1995](https://github.com/sergeytkachenko/paypilot-stand-shared/tree/74f1995).
+L11: [ДЗ10 resit / c933eae](https://github.com/Dmitriy004/paypilot-hw10-ai-adoption-resit/tree/c933eaecab798152ba1c2e032fd5e8cc8094ffbc). Manual — власний baseline; generated — запасний набір, походження зафіксовано у попередньому ДЗ. Попередні репозиторії не змінюю й тестів сюди не копіюю.
 
-## Що в папці
+## Запуск
 
-| Файл | Що це | Крок |
-| --- | --- | --- |
-| `run_eval.py` | **точка входу контуру.** Каркас: п'ять розділів-компонентів; функції з позначкою `КРОК N` дописуєте ви | 2–6 |
-| `tests/test_steps.py` | самоперевірка кроків без стенду й без моделі (20 тестів): тести кроку N зеленіють, коли крок зроблено | 2–6 |
-| `sets/l03.jsonl` … `sets/l08.jsonl` | набори кейсів L03–L08 | 2–6 |
-| `sets/l09_labels.jsonl` | калібрувальний набір судді L09 (у прогін агента не йде) | 1 |
-| `sets/l12.jsonl` | кейс `JNT-026` для спільної перевірки: клієнт `CUS-0006`, транзакція `TX-0601` | 3, 5 |
-| `loader.py`, `runner.py`, `assertions.py`, `stand.py`, `judge.py`, `console.py` | ранер L03–L09: лоадер, прогін кейса, драбина assertion'ів, клієнт стенду, суддя, друк | 1, 3 |
-| `cli.py`, `validate.py`, `generate_from_engines.py`, `tools/` | колишні точки входу: `cli.py --set …`, `--dry-run`, генерація кейсів із рушіїв, калібрування й порівняння суддів | 1 |
-| `docker-compose.yml`, `Dockerfile` | одна команда: `docker compose run --rm eval` → `python run_eval.py` | 2–6 |
-| `Makefile` | обгортка для bash і macOS: `make eval`, `make dry-run`, `make compare` | 6 |
-| `.gitattributes` | набори й записи — завжди з LF, на будь-якій ОС | 6 |
-| `reports/` | сюди лягають записи прогонів `run-<час>.json` | 4–6 |
-| `eval-framework.template.md` | шаблон артефакту: скопіюйте в `eval-framework.md` | 1–6, ДЗ |
-| `prompts/compose.mut.yml`, `prompts/mutants/` | підстановка мутанта промпту в стенд і приклад формату мутанта | опційне завдання |
-
-## Підготовка
-
-Розкладка тек, як на попередніх заняттях:
-
-```text
-~/paypilot/paypilot-stand    стенд
-~/paypilot/l11               кіт L11 з вашими tests/manual і tests/generated
-~/paypilot/l12               цей кіт
-```
-
-```bash
-git clone https://github.com/TarasFedorenkoFTV/paypilot-l12-eval ~/paypilot/l12
-cd ~/paypilot/l12
-cp .env.example .env
-```
+Потрібні Docker Compose >=2.24, локальний стенд з власним OpenAI-ключем та checkout L11. Стандартна розкладка: цей репозиторій, `../paypilot-stand`, `../l11`. Для моєї розкладки змінюються тільки змінні оточення (секретів тут немає):
 
 ```powershell
-# Windows PowerShell: ~ у git clone не розгортається
-git clone https://github.com/TarasFedorenkoFTV/paypilot-l12-eval "$HOME\paypilot\l12"
-cd "$HOME\paypilot\l12"
-Copy-Item .env.example .env
-```
-
-Кіт очікує поруч теки `paypilot-stand` і `l11`. Якщо вони лежать інакше (наприклад, тести L11 — у репозиторії ДЗ L11), впишіть шляхи в `.env`: `STAND_DIR=../назва-теки-стенду`, `L11_DIR=../назва-теки-l11` — відносно теки кіта або абсолютні (`D:/…`). Junction чи symlink Docker Desktop не монтує. Такий `.env` — налаштування вашого оточення, а не ручний крок контуру.
-
-Стенд має працювати зі справжньою моделлю: у `.env` стенду `LLM_PROVIDER=anthropic` і ваш `ANTHROPIC_API_KEY`. Перевірка: `docker exec paypilot-stand-stand-1 python scripts/doctor.py` → `llm provider [OK] anthropic`.
-
-Перший запуск у кожній теці збирає образ (Python 3.12 і pytest) — близько хвилини. `curl` у командах нижче — `curl.exe`: у Windows PowerShell 5.1 просто `curl` — інша команда. Потім:
-
-```bash
+$env:STAND_DIR = '../paypilot-stand-shared'
+$env:L11_DIR = '../paypilot-hw10-ai-adoption-resit'
 docker compose run --rm eval --dry-run
+docker compose run --rm eval
+docker compose run --rm --entrypoint pytest eval tests -q
 ```
 
-На свіжому кіті команда падає з `NotImplementedError: КРОК 2: set_hash() ще не написано`. Так і має бути: хеш набору — ваш перший шматок коду.
+Стенд має бути піднятий окремо. `stand.model.yml` фіксує OpenAI `gpt-4.1-mini-2025-04-14` для всіх основних записів, без редагування коду стенду:
 
-## Команди за кроками
-
-Усі команди — з кореня кіта. Змінні передаються через `-e`: так однаково працює в bash, Git Bash і PowerShell.
-
-| Крок | Команда |
-| --- | --- |
-| 2. Тести кроку | `docker compose run --rm --entrypoint pytest eval tests -q -k step2` |
-| 3. Рахунок без викликів | `docker compose run --rm eval --dry-run` |
-| 3. Рахунок з релізним шаром | `docker compose run --rm -e GATE=all eval --dry-run` |
-| 3. Один кейс спільної перевірки | `docker compose run --rm -e SET=l12 eval` |
-| 4. Прогін набору L03 | `docker compose run --rm -e SET=l03 eval` |
-| 4–6. Два записи поруч | `docker compose run --rm eval --compare reports/<A>.json reports/<B>.json` |
-| 5. Спільна перевірка з дефектом | `docker compose run --rm -e SET=l12 -e DEFECTS=D26 eval` |
-| 6. Увесь контур (щоденний шар) | `docker compose run --rm eval` |
-| 2–6. Усі тести кроків | `docker compose run --rm --entrypoint pytest eval tests -q` |
-
-`make eval`, `make dry-run`, `make compare A=… B=…` роблять те саме в bash і macOS; на Windows `make` зазвичай немає, і він не потрібен.
-
-Змінні контуру:
-
-| Змінна | Типово | Що задає |
-| --- | --- | --- |
-| `SET` | `all` (L03–L08 і L12) | набори через кому: `l03`, `l03,l07`, … |
-| `GATE` | `daily` | шар: `daily`, `release` або `all`; суддя живе лише в `release` |
-| `CASE` | — | лише ці кейси, через кому |
-| `PROFILE` | `clean` | профіль стенду на час прогону |
-| `DEFECTS` | — | додаткові дефекти на час прогону, наприклад `D26`; після прогону знімаються |
-| `JUDGE_MODEL` | — | модель судді з L10, у `.env`; потрібна лише для релізного шару |
-
-Код повернення: `0` — усе зелене; `1` — щось упало, пропущене, червоні або не знайдені unit-тести L11; `2` — стенд недоступний. `--compare` повертає `0`, коли записи порівнювані, і `1`, коли ні.
-
-## Стенд на base.v4 і назад (крок 4)
-
-`base.v4.md` лежить у кіті L11 (`agent-prompt/`). З теки стенду:
-
-```bash
-cd ~/paypilot/paypilot-stand
-docker compose -f docker-compose.yml -f ../l11/agent-prompt/compose.v4.yml up -d
-curl.exe -s http://localhost:8000/api/_test/prompt
-```
-
-Повернутися на base.v1: `docker compose up -d`.
-
-Стенд піднімається 10–15 секунд. Мітка, яку стенд віддає в полі `version`, лишається `base.v1` за будь-якого файлу: ім'я зашите в стенді. Яка версія діє, видно лише в першому рядку тексту промпту.
-
-## Мутанти промпту (опційне завдання)
-
-Мутант — копія `base.v1.md` з однією точковою зміною. Кожен мутант лежить окремим файлом у `prompts/mutants/`. Перший рядок у кожного свій, наприклад `# PayPilot — system prompt (base.v1-mut01)`. За цим рядком контур записує `prompt_version`, тож без нього всі прогони матимуть однакову версію. Приклад формату — контрольний мутант `prompts/mutants/base.v1-ctrl.md`: зміст той самий, змінено лише порядок слів в одному реченні.
-
-Підставити мутанта, з теки стенду. `MUT` — шлях до файлу мутанта відносно теки стенду:
-
-```bash
-cd ~/paypilot/paypilot-stand
-MUT=../l12/prompts/mutants/base.v1-ctrl.md docker compose -f docker-compose.yml -f ../l12/prompts/compose.mut.yml up -d
-curl.exe -s http://localhost:8000/api/_test/prompt
+```powershell
+docker compose -f ../paypilot-stand-shared/docker-compose.yml -f stand.model.yml up -d stand
+# Лише підстановка незмінного файлу L11 на кроці4:
+docker compose -f ../paypilot-stand-shared/docker-compose.yml -f stand.model.yml -f stand.v4.yml up -d stand
+# Повернення на base.v1 із збереженням тієї самої моделі:
+docker compose -f ../paypilot-stand-shared/docker-compose.yml -f stand.model.yml up -d stand
 ```
 
 ```powershell
-cd "$HOME\paypilot\paypilot-stand"
-$env:MUT = "../l12/prompts/mutants/base.v1-ctrl.md"
-docker compose -f docker-compose.yml -f ../l12/prompts/compose.mut.yml up -d
-curl.exe -s http://localhost:8000/api/_test/prompt
+docker compose run --rm -e SET=l03 eval
+docker compose run --rm -e SET=l12 eval
+docker compose run --rm -e SET=l12 -e DEFECTS=D26 eval
+docker compose run --rm eval --compare reports/FILE-V1.json reports/FILE-V4.json
 ```
 
-Потім з теки кіта — звичайний прогін: `docker compose run --rm eval`. Порівняти з прогоном на `base.v1`: `--compare` має показати одну змінену умову — `prompt_version`. Повернутися на base.v1: `docker compose up -d` з теки стенду.
+Налаштування шляхів і справжній ключ — передумови оточення; між клонуванням і запуском немає редагування коду або встановлення Python вручну. Не запускаю на спільному стенді: контур скидає seed-базу перед кожним кейсом. Коди виходу: 0 — всі перевірки зелені; 1 — FAIL/SKIP/unit failure; 2 — стенд недоступний. На clean червоні кейси не маскую; source sets незмінні.
 
-Якщо ваш репозиторій ДЗ лежить не в `~/paypilot/l12`, замініть `../l12` в обох місцях на свою теку.
+## Межі доказу
 
-## Ціна прогонів
+Тарифна оцінка з фактичних токенів — не звірка рахунку провайдера. `machine.requests` зберігає request_id, фактичну модель, токени й джерело ціни; кеш враховано, reasoning уже входить в output. Невідома модель або відсутній usage дає null, а не нуль. [Офіційний тариф](https://developers.openai.com/api/docs/pricing), перевірено26.11.2026.
 
-Еталонні прогони 12.11.2026, стенд `74f1995`, агент `claude-haiku-5-5`:
+Час автоматики не називаю особистими хвилинами читання. Еталонний шум1/71 належить моделі курсу, не є моєю оцінкою похибки. Результати одного прогона не доводять production-частоту або перевагу промпту.
 
-| Прогін | Кейсів | Викликів агента | Час | Гроші |
-| --- | --- | --- | --- | --- |
-| `--dry-run` | — | 0 | секунди | $0 |
-| `SET=l03` | 37 | 37 | ≈ 2,7 хв | ≈ $0.015 |
-| `SET=l12` | 1 | 1 | ≈ 6 с | < $0.001 |
-| увесь контур, щоденний шар | 71 | 72 | 4,5–6 хв | ≈ $0.03 |
-
-Суддя на щоденному шарі не викликається. Відповіді моделі щоразу трохи різні: частина вердиктів на однакових умовах може змінитися між прогонами.
-
-## Чого не робити
-
-- Не редагуйте `base.v1.md` і `base.v4.md`: їх лише перемикають.
-- Не правте кейси в `sets/`, щоб прогін «позеленів». Якщо кейс здається хибним, напишіть про це в шаблоні.
-- Не запускайте прогін на спільному стенді: ранер скидає базу стенду перед кожним кейсом і перемикає профіль.
-- Не комітьте `.env` і ключі.
+Статус: реалізація й вимірювання тривають; до повної здачі потрібні три авторські ADR, фінальні записи та чистий клон.

@@ -1,0 +1,33 @@
+{
+  "kind": "run_environment",
+  "stand_commit": "74f1995ca8e8e64e4526e374535c2c4e71a2bde1",
+  "kit_commit": "5db4dd0e99a77c3d9ef24f1d6a458cc58ae02293",
+  "l11_commit": "c933eaecab798152ba1c2e032fd5e8cc8094ffbc",
+  "provider": "openai",
+  "agent_model": "gpt-4.1-mini-2025-04-14",
+  "reasoning_parameter": "not supplied",
+  "clock": "2026-09-15T10:00:00Z",
+  "profile": "clean",
+  "judge_daily": "not-used",
+  "stand_files_container_equal_host_LF": true,
+  "stand_files_sha256_LF": {
+    "app/agent/loop.py": "5f92d54fa85a0ca3aad6aa6ea37c12ef63f9df8ca11d2e9e2dfb90404f50be13",
+    "app/agent/pricing.py": "be2878aba5ea0caaabf778544a5d317f61fdec23a17701dfb4de3baf95db53be",
+    "app/agent/providers/openai_provider.py": "169588c855415a24c96a1b76aa8442d3f6d5ab7621d7b8ce3c69d41564e11f92",
+    "app/engines/fx.py": "6e5ca9df6799473b905f8c7423534770121579a72b8024a5b7e56f1056eafefb",
+    "app/engines/disputes.py": "b3b18c67207b1f0d1b38a286eafe018683a67ffdf842477df8485691d2457ce6",
+    "prompts/base.v1.md": "87f8cbeaa2141e58d13d33a309e22a77bf530b19b3d7ca62e5e8ad7297f51ee7"
+  },
+  "v4_prompt_sha256_LF": "5101f18ea719f470f4e52fed838081eb69be9ee53c685250189e50d6f44cd627",
+  "l11_inputs": {
+    "tests/manual/test_fx_manual.py": "14bd8d9f8bd83ec12d62bc78136295ae3e6a240c69978f3826fca10e1911e699",
+    "tests/generated/test_fx_generated.py": "8f1999ea58e3c515d7fd82a14ec5362dea76c307cdebfc5615155b03d437c7da"
+  },
+  "l11_provenance": {
+    "manual": "own author baseline from resit",
+    "generated": "fallback; source in resit reports/fallback-source.json"
+  },
+  "cost_estimate_source": "https://developers.openai.com/api/docs/pricing",
+  "billing_reconciled": false,
+  "budget_usd": 0.5
+}
