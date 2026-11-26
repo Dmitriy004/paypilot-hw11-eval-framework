@@ -23,6 +23,7 @@
 import argparse
 import hashlib
 import json
+import math
 import os
 import re
 import subprocess
@@ -136,7 +137,8 @@ def estimate_cost(calls: list[dict]) -> float | None:
         inp = call.get("gen_ai.usage.input_tokens")
         out = call.get("gen_ai.usage.output_tokens")
         cached = call.get("gen_ai.usage.cache_read_input_tokens", 0)
-        if rates is None or inp is None or out is None or not 0 <= cached <= inp:
+        if (rates is None or any(type(value) is not int for value in (inp, out, cached))
+                or inp <= 0 or out < 0 or not 0 <= cached <= inp):
             return None
         total += ((inp - cached) * rates[0] + cached * rates[1] + out * rates[2]) / 1_000_000
     return round(total, 9)
@@ -150,7 +152,11 @@ def _meter(stand):
         out = chat(*args, **kwargs)
         SPENT["agent_calls"] += 1
         usage = out.get("usage") or {}
-        calls = stand.llm_calls(stand.trace(out["request_id"]))
+        trace_error = None
+        try:
+            calls = stand.llm_calls(stand.trace(out["request_id"]))
+        except (stand.StandError, OSError, json.JSONDecodeError) as error:
+            calls, trace_error = [], str(error)
         reported = usage.get("cost_usd")
         cost = float(reported) if reported is not None else estimate_cost(calls)
         basis = "stand_reported" if reported is not None else ("token_tariff_estimate" if cost is not None else "unknown")
@@ -159,6 +165,8 @@ def _meter(stand):
             "llm_calls": [{k: v for k, v in call.items()
                            if k == "gen_ai.request.model" or k.startswith("gen_ai.usage.")}
                           for call in calls]})
+        if trace_error is not None:
+            SPENT["requests"][-1]["trace_error"] = trace_error
         SPENT["cost_usd"] = (SPENT["cost_usd"] + cost
                              if SPENT["cost_usd"] is not None and cost is not None else None)
         return out
@@ -350,12 +358,28 @@ def compare(path_a: str, path_b: str) -> int:
     except (OSError, json.JSONDecodeError) as error:
         print(f"не порівнювані: {error}")
         return 1
+    if any(not isinstance(row, dict) for row in records):
+        print("не порівнювані: запис має бути JSON-об'єктом")
+        return 1
     a, b = records
     missing = [f"{side}.{field}" for side, row in zip(("A", "B"), records)
                for field in (*VERSION_FIELDS, "cases") if field not in row]
     if missing:
         print("не порівнювані: відсутні поля " + ", ".join(missing))
         return 1
+    for side, row in zip(("A", "B"), records):
+        valid_conditions = all(isinstance(row[field], str) and row[field].strip()
+                               for field in CONDITIONS)
+        elapsed = row["elapsed"]
+        valid_elapsed = (type(elapsed) in (int, float) and math.isfinite(elapsed)
+                         and elapsed >= 0)
+        valid_cases = (isinstance(row["cases"], list) and all(
+            isinstance(case, dict) and isinstance(case.get("id"), str)
+            and case["id"].strip() and type(case.get("passed")) is bool
+            for case in row["cases"]))
+        if not (valid_conditions and valid_elapsed and valid_cases):
+            print(f"не порівнювані: {side} має невалідні умови або рядки cases")
+            return 1
     print(f"{'поле':<22} {'A':<26} B")
     for field in VERSION_FIELDS:
         mark = "=" if a[field] == b[field] else "≠"

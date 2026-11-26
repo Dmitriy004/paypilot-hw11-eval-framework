@@ -24,5 +24,7 @@
       false
     ]
   },
-  "reporting_duration_seconds": null
+  "reporting_duration_seconds": null,
+  "reporting_command_execution_confirmed": true,
+  "reporting_output_matches_records": true
 }

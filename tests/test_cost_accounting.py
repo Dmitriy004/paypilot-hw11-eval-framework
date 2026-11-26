@@ -37,3 +37,26 @@ def test_meter_does_not_turn_unknown_into_zero(monkeypatch):
     stand.chat()
     assert run_eval.SPENT["cost_usd"] is None
     assert run_eval.SPENT["requests"][0]["cost_basis"] == "unknown"
+
+
+@pytest.mark.parametrize("reported", [None, 0.012])
+def test_successful_chat_stays_recorded_when_trace_transport_fails(monkeypatch, reported):
+    class Stand:
+        class StandError(RuntimeError): pass
+        def chat(self): return {"request_id":"R-paid", "usage":{"cost_usd":reported},"answer":"done"}
+        def trace(self, request_id): raise self.StandError("trace service unavailable")
+        def llm_calls(self, tree): raise AssertionError("no tree should be parsed")
+    monkeypatch.setattr(run_eval,"SPENT",{"agent_calls":0,"cost_usd":0.0,"requests":[]})
+    stand=Stand(); run_eval._meter(stand)
+    assert stand.chat()["answer"]=="done"
+    assert run_eval.SPENT["cost_usd"]==reported
+    assert run_eval.SPENT["requests"][0]["request_id"]=="R-paid"
+    assert run_eval.SPENT["requests"][0]["trace_error"]
+
+
+@pytest.mark.parametrize("inp,out,cached", [
+    (0,0,0), (None,10,0), (-1,10,0), (100,-1,0),
+    (100,10,None), (100,10,-1), (100,10,101), (True,10,0),
+])
+def test_missing_or_invalid_token_usage_remains_unknown(inp,out,cached):
+    assert run_eval.estimate_cost([call("gpt-4.1-mini-2025-04-14",inp,out,cached)]) is None
